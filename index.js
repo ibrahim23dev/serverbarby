@@ -56,6 +56,12 @@ app.post("/portfolio", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+app.get("/", (req, res) => {
+  res.send(
+     "Server is up and running on port 5000"
+);
+});
 app.get("/portfolio", async (req, res) => {
   res.json(await Portfolio.find());
 });
